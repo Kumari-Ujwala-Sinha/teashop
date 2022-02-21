@@ -1,0 +1,113 @@
+.shopCollection{
+    width:100%;
+}
+.collectionWrapper{
+    width:80%;
+    margin:40px auto;
+}
+.shopCollection .collectionWrapper h2{
+    text-align:center;
+    font-size:44px;
+    font-weight: 500;
+}
+.collectionWrapper .collectionItems{
+    text-align: center;
+    margin:40px 0;
+}
+.collectionItems .collection-item{
+    background:none;
+    border:none;
+    font-size:17px;
+    font-weight: 300;
+    margin:10px;
+    cursor: pointer;
+    padding:10px 20px;
+    border:2px solid white;
+}
+.collectionItems .collection-item:hover{
+    border:2px solid rgb(117, 43, 43);   
+}
+.collection-item.activeClass{
+    border:2px solid rgb(117, 43, 43);  
+}
+.collectionProducts{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.collectionProducts .colProduct1 .colProductImg{
+    width:250px;
+}
+.colProduct1{
+    margin:10px; 
+    width:250px;   
+}
+.colProduct2{
+    width:350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    margin:10px;
+}
+.collectionProducts .colProduct2 .colProductImg{
+    width:350px;
+}
+
+.colProductTitle{
+    font-size:16px;
+    font-weight: 600;
+}
+.colProductDesc{
+    margin:20px 0;
+}
+.singleproduct__rating{
+    margin: 10px 0;
+}
+
+.shopAllCollection .collectionWrapper h2{
+    text-align:center;
+    font-size:40px;
+    font-weight: 500;
+    margin:40px 0;
+}
+.linkProduct{
+    text-decoration: none;
+    color: black;
+}
+
+@media (max-width:580px){
+    .collectionItems{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin:30px 0;
+    }
+    .collectionItems .collection-item{
+        display: block;
+        text-align: center;
+        margin:5px;
+    }
+    .collectionProducts{
+        justify-content: center;
+    }
+}
+@media (max-width:420px){
+    .collectionWrapper{
+        width:90%;
+        margin:40px auto;
+    }
+    .collectionProducts .colProduct1 .colProductImg{
+        width:200px;
+    }
+    .colProduct1{ 
+        width:200px;   
+    }
+    .colProduct2{
+        width:250px;
+    }
+    .collectionProducts .colProduct2 .colProductImg{
+        width:250px;
+    }
+}

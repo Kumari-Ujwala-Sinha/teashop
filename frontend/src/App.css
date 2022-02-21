@@ -1,0 +1,59 @@
+* {
+
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input[type="submit"] {
+background-color: #ffc107 !important;
+}
+
+.greenColor {
+  color: green !important;
+}
+.redColor {
+  color: red !important;
+}
+.shopIconFloat{
+  position: fixed;
+  top:70%;
+  left:20px;
+  width:100px;
+  height:100px;
+  z-index:9999;
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.shopIconImg{
+  width:70px;
+  height:70px;
+  margin-left:6px;
+  border-radius: 50%;
+}
+.shopIconFloat a{
+  color:#000;
+  font-weight: 700;
+}
+.shopFloatText{
+  color:#000;
+  font-weight: 700;
+  background:#b0d13f;
+  padding:0 5px;
+  text-align: center;
+}

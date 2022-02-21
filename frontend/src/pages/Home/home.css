@@ -1,0 +1,106 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.sliderWrapper{
+  width:100%;
+  height:100vh;
+}
+.header__images{
+  width:100%;
+  height:100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:#dee2e6;
+  position: relative;
+}
+
+.sliderContainer{
+  width:100%;
+}
+
+.sliderText{
+  width:80%;
+  margin:0 auto;
+  text-align: left;
+}
+.slider__text1{
+  font-size:28px;
+}
+.slider__text2{
+  font-size: 50px;
+  font-weight: 400;
+  margin:15px 0;
+}
+.slider__subheading{
+  font-size:18px;
+  margin-bottom:40px;
+  border-left:5px solid #ffc107;
+  padding-left:10px;
+}
+.slider__btn{
+  text-decoration: none;
+  background-color: #ffc107;
+  padding:15px 40px;
+  color:#fff;
+  font-weight: 600;
+  margin-right:5px;
+}
+.sliderContainer .carousel .control-prev.control-arrow:before {
+  border-right: 8px solid #fff;
+  width:20px;
+  height:20px;
+  background:#000;
+  -webkit-clip-path: polygon(100% 0, 0 53%, 100% 100%);
+  clip-path: polygon(100% 0, 0 53%, 100% 100%);
+}
+.sliderContainer .carousel .control-next.control-arrow:before {
+  border-left: 8px solid #fff;
+  width:20px;
+  height:20px;
+  background:#000;
+  -webkit-clip-path: polygon(0 0, 0% 100%, 100% 52%);
+  clip-path: polygon(0 0, 0% 100%, 100% 52%);
+}
+
+@media (max-width:960px){
+  .sliderText{
+    width:80%;
+  }
+  .slider__text1{
+    font-size:24px;
+  }
+  .slider__text2{
+    font-size: 40px;
+  }
+  .slider__subheading{
+    font-size:16px;
+  }
+  
+}
+@media (max-width:580px){
+  .sliderText{
+    width:80%;
+  }
+  .slider__text1{
+    font-size:20px;
+  }
+  .slider__text2{
+    font-size: 30px;
+  }
+  .slider__subheading{
+    font-size:14px;
+  }
+  .slider__btn{
+    width:100%;
+    padding:15px 40px;
+    display: block;
+    margin:5px 0;
+    width:250px;
+  }
+  
+}

@@ -1,0 +1,43 @@
+.ingredient{
+  background: #f7f7f0;
+}
+.ingredientMain{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.ingredientWrapper{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin:0px 10px;
+  margin-top:50px;
+}
+.custom {
+    background-color: #252827;
+    color: #F8CF2C;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+  }
+  .custom:hover {
+    opacity: 0.99;
+  }
+  
+  .customHover {
+    background-color: #252827;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+  }
+  .customHover:hover {
+    opacity: 0.99;
+  }
+
+  @media (max-width:650px){
+
+  }

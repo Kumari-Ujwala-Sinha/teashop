@@ -1,0 +1,85 @@
+
+.bg-header {
+    /* background-color: #ddddad; */
+    background-color: #252827;
+}
+.aboutImg{
+    height:60vh;
+}
+.main-text{
+    width:100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.headerText {
+    color: #F8CF2C;
+    /* color: #0C2D48; */
+}
+
+.titleColor {
+    color: #252827;
+    /* color: #05445e; */
+}
+
+.textColor {
+    color: #252827;
+    /* color: #1b434d; */
+}
+
+.main-text p{
+    width:60%;
+
+}
+
+.custom {
+    background-color: #5e55aa;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+.goalImg{
+    width:500px;
+    height:400px;
+    object-fit: cover;
+}
+.aboutGoal{
+    padding:50px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.goalTextWrapper{
+    width:800px;
+}
+.menu {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.button-change {
+    background-color: #05445E;
+}
+
+.button-change:hover {
+    background-color: #0a6b94;
+}
+
+@media (max-width:520px){
+    .aboutImg{
+        height:70vh;
+    }
+    
+    .main-text p{
+        width:85%;
+
+    }
+
+}

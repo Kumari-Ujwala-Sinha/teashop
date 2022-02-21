@@ -1,0 +1,124 @@
+.footer{
+    width:100%;
+}
+.footerContainer{
+    width:100%;
+}
+.footerWrapper{
+    width:80%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding:30px 0;
+    margin:0 auto;
+}
+.section{
+  margin:20px;
+}
+.section__head{
+    margin-bottom: 30px;
+}
+.section1__text{
+    word-spacing: 1px;
+    max-width:450px;
+}
+.section1__text p{
+    margin:10px 0;
+}
+
+.section2__item{
+    display: flex;
+}
+
+.f-blog__text{
+    color: #000;
+}
+.section2Input{
+    margin:20px 0;
+}
+.section2Input input{
+    padding:14px;
+    width:80%;
+    font-size:15px;
+    border:none;
+    outline:none;
+    border:1px solid lightgrey;
+}
+.section2Btn{
+    padding:14px 0;
+    width:20%;
+    font-size:16px;
+    background: #b0d13f;
+    border:none;
+    color:#fff;
+}
+.section3Social{
+    margin:20px 0;
+}
+.section3Social{
+    display: flex;
+}
+.section3Social .socialIcon{
+    text-decoration: none;
+    color:#e6b140;
+    margin-right: 25px;
+    border:1px solid lightgrey;
+    padding:3px 10px;
+}
+.section3Social .socialIcon .MuiSvgIcon-root {
+    font-size: 2rem;
+}
+.copyright{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding:10px 0;
+    background:rgba(0,0,0,0.7);
+}
+
+.copyrightContainer{
+    width:80%;
+    margin:0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.copyrightContainer a{
+    color:#fff;
+    text-align: center;
+}
+.copyrightNav{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    color: lightgray;
+    width:500px;
+    margin:10px 0;
+}
+.copyrightNavItem{
+    font-size:16px;
+}
+.copyrightAbout{
+    display: flex;
+    width:500px;
+    justify-content: center;
+    align-items: center;
+}
+.cc__text{
+    color: #fff;
+    font-size:15px;
+    color: lightgray;
+}
+.copyrightAbout a{
+    color: #fff;
+    font-size:15px;
+    color: lightgray;
+    margin-left:10px;
+}
+
+@media (max-width:580px){
+    .footerWrapper {
+        width: 90%;
+    }
+}
