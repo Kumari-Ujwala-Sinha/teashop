@@ -83,6 +83,10 @@ const productSchema = mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  ingredients:{
+    type: Array,
+    default: []
+}
 });
 
 module.exports = mongoose.model("Product", productSchema);

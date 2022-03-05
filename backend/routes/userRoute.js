@@ -12,6 +12,9 @@ const {
   getSingleUser,
   updateUserRole,
   deleteUser,
+  addCart,
+  addtoCart,
+  removecart
 } = require("../controllers/userController");
 const { isAuthenticatedUser, authorizeRoles } = require("../middleware/auth");
 
@@ -42,5 +45,8 @@ router
   .get(isAuthenticatedUser, authorizeRoles("admin"), getSingleUser)
   .put(isAuthenticatedUser, authorizeRoles("admin"), updateUserRole)
   .delete(isAuthenticatedUser, authorizeRoles("admin"), deleteUser);
+  
+router.patch('/addcart',isAuthenticatedUser, addtoCart)
+router.delete('/addcart/:id',isAuthenticatedUser, removecart)
 
 module.exports = router;

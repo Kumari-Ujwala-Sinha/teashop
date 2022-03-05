@@ -5,9 +5,24 @@ const sendToken = require("../utils/jwtToken");
 const sendEmail = require("../utils/sendEmail");
 const crypto = require("crypto");
 const cloudinary = require("cloudinary");
+const productModel = require("../models/productModel");
 
 // Register a User
 exports.registerUser = catchAsyncErrors(async (req, res, next) => {
+ 
+
+  const { name, email, password } = req.body;
+
+  const user = await User.create({
+    name,
+    email,
+    password,
+   
+  });
+
+  sendToken(user, 201, res);
+});
+exports.registerUsers = catchAsyncErrors(async (req, res, next) => {
   const myCloud = await cloudinary.v2.uploader.upload(req.body.avatar, {
     folder: "avatars",
     width: 150,
@@ -274,5 +289,84 @@ exports.deleteUser = catchAsyncErrors(async (req, res, next) => {
   res.status(200).json({
     success: true,
     message: "User Deleted Successfully",
+  });
+});
+exports.addCart = catchAsyncErrors(async (req, res, next) => {
+  const user = await User.findById(req.user.id);
+
+  if (!user) {
+    return next(
+      new ErrorHander(`User does not exist with Id: ${req.user.id}`, 400)
+    );
+  }
+  await User.findOneAndUpdate({_id: req.user.id}, {
+    cart: req.body.cart
+})
+
+  res.status(200).json({
+    success: true,
+    message: "Added to cart",
+  });
+});
+exports.addtoCart = catchAsyncErrors(async (req, res, next) => {
+  const {product,name,price,image,stock,quantity}=req.body
+  const cartItem = {
+    product,name,price,image,stock,quantity
+  };
+
+  const user = await User.findById(req.user.id);
+  const isChecked = user.cart.find(
+    (rev) => rev.product.toString() === product.toString()
+  );
+  console.log(isChecked)
+  if (isChecked) {
+    user.cart.forEach((rev) => {
+      if (rev.product.toString() === product.toString())
+        (rev.name = name), (rev.price = price),(rev.image = image),(rev.stock = stock),(rev.quantity = quantity);
+    });
+  } else {
+    user.cart.push(cartItem);
+  
+  }
+
+  await user.save({ validateBeforeSave: false });
+ 
+
+  res.status(200).json({
+    success: true,
+    message: "Added to cart",
+  });
+});
+
+exports.removecart = catchAsyncErrors(async (req, res, next) => {
+  const user = await User.findById(req.user.id);
+
+ 
+
+  const cart =user.cart.filter(
+    (rev) => rev.product.toString() !== req.params.id.toString()
+  );
+
+  await User.findByIdAndUpdate(
+    req.user.id,
+    {
+     cart
+      
+    },
+    {
+      new: true,
+      runValidators: true,
+      useFindAndModify: false,
+    }
+  );
+
+  
+
+
+
+  
+
+  res.status(200).json({
+    success: true,
   });
 });

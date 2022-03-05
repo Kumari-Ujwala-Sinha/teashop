@@ -26,28 +26,29 @@ const userSchema = new mongoose.Schema({
   avatar: {
     public_id: {
       type: String,
-      required: true,
+     default:"anything"
     },
     url: {
       type: String,
-      required: true,
+     default:"https://www.w3schools.com/w3images/avatar6.png"
     },
   },
-  role: {
-    type: String,
-    default: "user",
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
-  cartItems: [
+  cart: [
     {
+      product: {
+        type: mongoose.Schema.ObjectId,
+        ref: "Product",
+        required: true,
+      },
       name: {
         type: String,
         required: true,
       },
-      price: {
+    price: {
+        type: Number,
+        required: true,
+      },
+      stock: {
         type: Number,
         required: true,
       },
@@ -59,13 +60,17 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
       },
-      product: {
-        type: mongoose.Schema.ObjectId,
-        ref: "Product",
-        required: true,
-      },
     },
   ],
+  role: {
+    type: String,
+    default: "user",
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+
   resetPasswordToken: String,
   resetPasswordExpire: Date,
 });

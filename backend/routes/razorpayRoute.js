@@ -66,7 +66,7 @@ router.post('/pay-order',isAuthenticatedUser, async (req, res) =>{
        })
        await newPayment.save();
        console.log("payment")
-       res.send({msg:'Payment was successfull'})
+       res.send({msg:'Payment was successfull',newPayment})
     }catch(error){
         console.log("checking")
         res.status(500).send(error);

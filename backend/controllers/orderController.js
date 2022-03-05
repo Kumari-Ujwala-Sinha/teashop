@@ -38,7 +38,7 @@ exports.getSingleOrder = catchAsyncErrors(async (req, res, next) => {
   const order = await Order.findById(req.params.id).populate(
     "user",
     "name email"
-  );
+  ).populate("orderItems.product");
 
   if (!order) {
     return next(new ErrorHander("Order not found with this Id", 404));
@@ -103,6 +103,26 @@ exports.updateOrder = catchAsyncErrors(async (req, res, next) => {
   await order.save({ validateBeforeSave: false });
   res.status(200).json({
     success: true,
+  });
+});
+exports.myOrder = catchAsyncErrors(async (req, res, next) => {
+  const order = await Order.findById(req.params.id).populate(
+    "user",
+    "name email"
+  );
+
+  if (!order) {
+    return next(new ErrorHander("Order not found with this Id", 404));
+  }
+  if (order.user != req.user.id) {
+    return next(new ErrorHander("This not your order", 400));
+  }
+
+
+  
+  res.status(200).json({
+    success: true,
+    order
   });
 });
 
