@@ -22,9 +22,9 @@ cloudinary.config({
   api_key: "375999797612671",
   api_secret: "rXX2bC8iDY2KGUqwFzItQxGZon4"
 });
-
-const server = app.listen(process.env.PORT, () => {
-  console.log(`Server is working on http://localhost:${process.env.PORT}`);
+const PORT=3001
+const server = app.listen(PORT, () => {
+  console.log(`Server is working on http://localhost:${PORT}`);
 });
 
 // Unhandled Promise Rejection
