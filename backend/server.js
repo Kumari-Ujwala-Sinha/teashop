@@ -1,6 +1,6 @@
 const app = require("./app");
 const cloudinary = require("cloudinary");
-
+const connectDatabase = require("./config/database");
 
 // Handling Uncaught Exception
 process.on("uncaughtException", (err) => {
@@ -13,7 +13,7 @@ process.on("uncaughtException", (err) => {
 
 
 // Connecting to database
-
+connectDatabase();
 
 cloudinary.config({
   cloud_name: "dtl11nkyo",
