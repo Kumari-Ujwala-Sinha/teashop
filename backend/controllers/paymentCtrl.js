@@ -99,7 +99,7 @@ module.exports.createRazororder = async (req, res) => {
   
   module.exports.verifyPayments = async (req, res) => {
     const crypto = require("crypto");
-    const hmac = crypto.createHmac("sha256", process.env.RAZORPAY_KEY_SECRET);
+    const hmac = crypto.createHmac("sha256", "25TNPnxtk6BZMih0rieH8857");
     hmac.update(req.body.order_id + "|" + req.body.payment_id);
     const digest = hmac.digest("hex");
     console.log(digest);

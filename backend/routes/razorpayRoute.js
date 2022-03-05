@@ -13,15 +13,15 @@ const { isAuthenticatedUser, authorizeRoles } = require("../middleware/auth");
 
 
 router.get('/get-razorpay-key',isAuthenticatedUser,(req,res)=>{
-    res.send({key:process.env.RAZORPAY_KEY_ID})
+    res.send({key:"rzp_test_GiJIc1jG5WL47E"})
 })
 
 router.post('/create-order',isAuthenticatedUser, async (req, res) =>{
     try{
         console.log("createorder")
         const instance=new Razorpay({
-            key_id:process.env.RAZORPAY_KEY_ID,
-            key_secret:process.env.RAZORPAY_KEY_SECRET
+            key_id:"rzp_test_GiJIc1jG5WL47E",
+            key_secret:"25TNPnxtk6BZMih0rieH8857"
         });
         const options={
             amount:req.body.amount,

@@ -18,9 +18,9 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
 connectDatabase();
 
 cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_NAME,
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET,
+  cloud_name: "dtl11nkyo",
+  api_key: "375999797612671",
+  api_secret: "rXX2bC8iDY2KGUqwFzItQxGZon4"
 });
 
 const server = app.listen(process.env.PORT, () => {
