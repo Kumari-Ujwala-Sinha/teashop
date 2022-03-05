@@ -13,7 +13,7 @@ process.on("uncaughtException", (err) => {
 
 
 // Connecting to database
-connectDatabase();
+
 
 cloudinary.config({
   cloud_name: "dtl11nkyo",
